@@ -4,6 +4,16 @@ const creatures = require('../models/creatures.json')
 
 const actions = {}
 
+actions.seed = async (req,res)=>{
+    try{
+        await Creature.deleteMany({})
+        await Creature.create(creatures)
+        res.redirect('/')
+    } catch(err){
+        res.send(err)
+    }
+}
+
 actions.index = async (req,res)=>{
     try{
         res.json(creatures)
