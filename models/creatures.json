@@ -1,0 +1,9 @@
+[
+    {
+        "name": "Testmon",
+        "icon": "https://i.imgur.com/wMTSqOd.png",
+        "isFed": "false",
+        "isWatered": "false",
+        "isPetted": "false"
+    }
+]
