@@ -20,12 +20,17 @@ actions.index = (req,res)=>{
     })
 }
 
+actions.update = (req,res)=>{
+    Creature.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedCreature)=>{
+        res.json(updatedCreature)
+    })
+}
+
 actions.delete = (req,res)=>{
     Creature.findByIdAndDelete(req.params.id, (err, deletedCreature)=>{
         res.json(creatures)
     })
 }
-
 
 
 actions.create = async (req, res)=>{
