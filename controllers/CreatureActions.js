@@ -14,13 +14,29 @@ actions.seed = async (req,res)=>{
     }
 }
 
-actions.index = async (req,res)=>{
+actions.index = (req,res)=>{
+    Creature.find({}, (err, allCreatures)=>{
+        res.json(allCreatures)
+    })
+}
+
+actions.delete = async (req,res)=>{
     try{
+        await Creature.findByIdAndDelete(req.params.id)
         res.json(creatures)
-    } catch (err){
+    } catch(err){
         res.send(err)
     }
 }
+
+
+
+actions.create = async (req, res)=>{
+    Creature.create(req.body, (err, createdCreature)=>{
+        res.json(createdCreature)
+    })
+}
+
 
 
 module.exports = actions

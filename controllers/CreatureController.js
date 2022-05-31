@@ -5,6 +5,7 @@ const CreatureActions = require('./CreatureActions')
 
 router.get('/seed', CreatureActions.seed)
 router.get('/', CreatureActions.index)
+router.post('/', CreatureActions.create)
 
 
 
