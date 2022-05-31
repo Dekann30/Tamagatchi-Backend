@@ -11,7 +11,11 @@ const app = express()
 //Middleware
 app.use(morgan('tiny'))
 app.use(cors())
-app.use('/', CreatureRouter)
+app.use('/creatures', CreatureRouter)
+
+app.get('/', (req,res)=>{
+    res.redirect('/creatures')
+})
 
 
 app.listen(PORT, ()=>{

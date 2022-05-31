@@ -8,7 +8,7 @@ actions.seed = async (req,res)=>{
     try{
         await Creature.deleteMany({})
         await Creature.create(creatures)
-        res.redirect('/')
+        res.redirect('/creatures')
     } catch(err){
         res.send(err)
     }
