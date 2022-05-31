@@ -5,6 +5,7 @@ const CreatureActions = require('./CreatureActions')
 
 router.get('/seed', CreatureActions.seed)
 router.get('/', CreatureActions.index)
+router.delete('/:id', CreatureActions.delete)
 router.post('/', CreatureActions.create)
 router.get('/:id', CreatureActions.show)
 

@@ -20,13 +20,10 @@ actions.index = (req,res)=>{
     })
 }
 
-actions.delete = async (req,res)=>{
-    try{
-        await Creature.findByIdAndDelete(req.params.id)
+actions.delete = (req,res)=>{
+    Creature.findByIdAndDelete(req.params.id, (err, deletedCreature)=>{
         res.json(creatures)
-    } catch(err){
-        res.send(err)
-    }
+    })
 }
 
 
