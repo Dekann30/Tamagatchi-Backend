@@ -38,5 +38,10 @@ actions.create = async (req, res)=>{
 }
 
 
+actions.show = (req,res)=>{
+    Creature.findById(req.params.id, (err, foundCreature)=>{
+        res.json(foundCreature)
+    })
+}
 
 module.exports = actions
