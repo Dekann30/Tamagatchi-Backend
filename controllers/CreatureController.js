@@ -8,6 +8,7 @@ router.get('/', CreatureActions.index)
 router.delete('/:id', CreatureActions.delete)
 router.put('/:id', CreatureActions.update)
 router.post('/', CreatureActions.create)
+router.get('/:id/edit', CreatureActions.edit)
 router.get('/:id', CreatureActions.show)
 
 

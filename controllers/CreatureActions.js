@@ -39,6 +39,10 @@ actions.create = async (req, res)=>{
     })
 }
 
+actions.edit = async (req,res)=>{
+    await Creature.findById(req.params.id)
+    res.json(creatures)
+}
 
 actions.show = (req,res)=>{
     Creature.findById(req.params.id, (err, foundCreature)=>{
